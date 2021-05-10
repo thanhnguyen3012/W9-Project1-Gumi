@@ -1,0 +1,6 @@
+framework module Pods_W9_Project1_Gumi {
+  umbrella header "Pods-W9-Project1-Gumi-umbrella.h"
+
+  export *
+  module * { export * }
+}

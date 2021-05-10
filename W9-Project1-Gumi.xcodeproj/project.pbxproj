@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		845833112648C33C0070EA64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833102648C33C0070EA64 /* AppDelegate.swift */; };
 		845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833122648C33C0070EA64 /* SceneDelegate.swift */; };
-		845833152648C33C0070EA64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833142648C33C0070EA64 /* ViewController.swift */; };
-		845833182648C33C0070EA64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833162648C33C0070EA64 /* Main.storyboard */; };
 		8458331A2648C33F0070EA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845833192648C33F0070EA64 /* Assets.xcassets */; };
 		8458331D2648C33F0070EA64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8458331B2648C33F0070EA64 /* LaunchScreen.storyboard */; };
+		845833272648C8790070EA64 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833262648C8790070EA64 /* HomeView.storyboard */; };
+		845833292648C88A0070EA64 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833282648C88A0070EA64 /* HomeViewController.swift */; };
+		E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00D2C39176FE009A00FF90A4 /* Pods-W9-Project1-Gumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.debug.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.debug.xcconfig"; sourceTree = "<group>"; };
+		65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W9_Project1_Gumi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8458330D2648C33C0070EA64 /* W9-Project1-Gumi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "W9-Project1-Gumi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		845833102648C33C0070EA64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845833122648C33C0070EA64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		845833142648C33C0070EA64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		845833172648C33C0070EA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845833192648C33F0070EA64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8458331C2648C33F0070EA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8458331E2648C33F0070EA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845833262648C8790070EA64 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
+		845833282648C88A0070EA64 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.release.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FF0C49097D94C781386EFC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		845833042648C33C0070EA64 = {
 			isa = PBXGroup;
 			children = (
+				845833242648C8620070EA64 /* UI */,
 				8458330F2648C33C0070EA64 /* W9-Project1-Gumi */,
 				8458330E2648C33C0070EA64 /* Products */,
+				8751F275774D9721953A1802 /* Pods */,
+				0FF0C49097D94C781386EFC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +74,38 @@
 			children = (
 				845833102648C33C0070EA64 /* AppDelegate.swift */,
 				845833122648C33C0070EA64 /* SceneDelegate.swift */,
-				845833142648C33C0070EA64 /* ViewController.swift */,
-				845833162648C33C0070EA64 /* Main.storyboard */,
 				845833192648C33F0070EA64 /* Assets.xcassets */,
 				8458331B2648C33F0070EA64 /* LaunchScreen.storyboard */,
 				8458331E2648C33F0070EA64 /* Info.plist */,
 			);
 			path = "W9-Project1-Gumi";
+			sourceTree = "<group>";
+		};
+		845833242648C8620070EA64 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				845833252648C86D0070EA64 /* HomeView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		845833252648C86D0070EA64 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				845833262648C8790070EA64 /* HomeView.storyboard */,
+				845833282648C88A0070EA64 /* HomeViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		8751F275774D9721953A1802 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00D2C39176FE009A00FF90A4 /* Pods-W9-Project1-Gumi.debug.xcconfig */,
+				D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 845833212648C33F0070EA64 /* Build configuration list for PBXNativeTarget "W9-Project1-Gumi" */;
 			buildPhases = (
+				7421A4342D18F91637B74811 /* [CP] Check Pods Manifest.lock */,
 				845833092648C33C0070EA64 /* Sources */,
 				8458330A2648C33C0070EA64 /* Frameworks */,
 				8458330B2648C33C0070EA64 /* Resources */,
+				F44800A9DA861B872F900D43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,36 +167,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845833272648C8790070EA64 /* HomeView.storyboard in Resources */,
 				8458331D2648C33F0070EA64 /* LaunchScreen.storyboard in Resources */,
 				8458331A2648C33F0070EA64 /* Assets.xcassets in Resources */,
-				845833182648C33C0070EA64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7421A4342D18F91637B74811 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-W9-Project1-Gumi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44800A9DA861B872F900D43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		845833092648C33C0070EA64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845833152648C33C0070EA64 /* ViewController.swift in Sources */,
 				845833112648C33C0070EA64 /* AppDelegate.swift in Sources */,
 				845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */,
+				845833292648C88A0070EA64 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		845833162648C33C0070EA64 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				845833172648C33C0070EA64 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8458331B2648C33F0070EA64 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +360,7 @@
 		};
 		845833222648C33F0070EA64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00D2C39176FE009A00FF90A4 /* Pods-W9-Project1-Gumi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +380,7 @@
 		};
 		845833232648C33F0070EA64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
