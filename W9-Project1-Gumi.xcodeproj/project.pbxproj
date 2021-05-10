@@ -19,6 +19,7 @@
 		845833342648CEBF0070EA64 /* TopicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845833322648CEBF0070EA64 /* TopicCollectionViewCell.xib */; };
 		845833372648D2C90070EA64 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833362648D2C90070EA64 /* SearchView.storyboard */; };
 		845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833382648D2DD0070EA64 /* SearchViewController.swift */; };
+		8458333D2648D7D90070EA64 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458333C2648D7D90070EA64 /* HomeViewModel.swift */; };
 		E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		845833322648CEBF0070EA64 /* TopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCollectionViewCell.xib; sourceTree = "<group>"; };
 		845833362648D2C90070EA64 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
 		845833382648D2DD0070EA64 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8458333C2648D7D90070EA64 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.release.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		8458330F2648C33C0070EA64 /* W9-Project1-Gumi */ = {
 			isa = PBXGroup;
 			children = (
+				8458333B2648D7BF0070EA64 /* Data */,
 				845833242648C8620070EA64 /* UI */,
 				845833102648C33C0070EA64 /* AppDelegate.swift */,
 				845833122648C33C0070EA64 /* SceneDelegate.swift */,
@@ -108,6 +111,7 @@
 				8458332A2648CCA10070EA64 /* Parts */,
 				845833262648C8790070EA64 /* HomeView.storyboard */,
 				845833282648C88A0070EA64 /* HomeViewController.swift */,
+				8458333C2648D7D90070EA64 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -154,6 +158,13 @@
 			children = (
 			);
 			path = Parts;
+			sourceTree = "<group>";
+		};
+		8458333B2648D7BF0070EA64 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		8751F275774D9721953A1802 /* Pods */ = {
@@ -284,6 +295,7 @@
 			files = (
 				845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */,
 				845833112648C33C0070EA64 /* AppDelegate.swift in Sources */,
+				8458333D2648D7D90070EA64 /* HomeViewModel.swift in Sources */,
 				845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */,
 				8458332F2648CDD10070EA64 /* ImageCollectionViewCell.swift in Sources */,
 				845833292648C88A0070EA64 /* HomeViewController.swift in Sources */,
