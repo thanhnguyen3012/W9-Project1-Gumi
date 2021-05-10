@@ -15,13 +15,13 @@ enum MyPhotoAPI {
 // MARK: - MyPhotoAPI
 extension MyPhotoAPI: TargetType {
     var baseURL: String {
-        "https://api.unsplash.com/photos/?client_id=X8UfN6XkWcMtjfp9RbMJnZJIAylr6K61Elq39hOLeZs"
+//        "https://api.unsplash.com/"
     }
     
     var path: String {
         switch self {
         case .getListPhotos:
-            return ""
+            return "photos"
         }
     }
     
