@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,12 @@
 		8458331D2648C33F0070EA64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8458331B2648C33F0070EA64 /* LaunchScreen.storyboard */; };
 		845833272648C8790070EA64 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833262648C8790070EA64 /* HomeView.storyboard */; };
 		845833292648C88A0070EA64 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833282648C88A0070EA64 /* HomeViewController.swift */; };
+		8458332F2648CDD10070EA64 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458332D2648CDD10070EA64 /* ImageCollectionViewCell.swift */; };
+		845833302648CDD10070EA64 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8458332E2648CDD10070EA64 /* ImageCollectionViewCell.xib */; };
+		845833332648CEBF0070EA64 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833312648CEBF0070EA64 /* TopicCollectionViewCell.swift */; };
+		845833342648CEBF0070EA64 /* TopicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845833322648CEBF0070EA64 /* TopicCollectionViewCell.xib */; };
+		845833372648D2C90070EA64 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833362648D2C90070EA64 /* SearchView.storyboard */; };
+		845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833382648D2DD0070EA64 /* SearchViewController.swift */; };
 		E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +33,12 @@
 		8458331E2648C33F0070EA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845833262648C8790070EA64 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		845833282648C88A0070EA64 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8458332D2648CDD10070EA64 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8458332E2648CDD10070EA64 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		845833312648CEBF0070EA64 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
+		845833322648CEBF0070EA64 /* TopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCollectionViewCell.xib; sourceTree = "<group>"; };
+		845833362648D2C90070EA64 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
+		845833382648D2DD0070EA64 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.release.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +65,6 @@
 		845833042648C33C0070EA64 = {
 			isa = PBXGroup;
 			children = (
-				845833242648C8620070EA64 /* UI */,
 				8458330F2648C33C0070EA64 /* W9-Project1-Gumi */,
 				8458330E2648C33C0070EA64 /* Products */,
 				8751F275774D9721953A1802 /* Pods */,
@@ -72,6 +83,7 @@
 		8458330F2648C33C0070EA64 /* W9-Project1-Gumi */ = {
 			isa = PBXGroup;
 			children = (
+				845833242648C8620070EA64 /* UI */,
 				845833102648C33C0070EA64 /* AppDelegate.swift */,
 				845833122648C33C0070EA64 /* SceneDelegate.swift */,
 				845833192648C33F0070EA64 /* Assets.xcassets */,
@@ -84,6 +96,7 @@
 		845833242648C8620070EA64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				845833352648D2B10070EA64 /* SearchView */,
 				845833252648C86D0070EA64 /* HomeView */,
 			);
 			path = UI;
@@ -92,10 +105,55 @@
 		845833252648C86D0070EA64 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				8458332A2648CCA10070EA64 /* Parts */,
 				845833262648C8790070EA64 /* HomeView.storyboard */,
 				845833282648C88A0070EA64 /* HomeViewController.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		8458332A2648CCA10070EA64 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				8458332C2648CCB10070EA64 /* ImageCollectionViewCell */,
+				8458332B2648CCA70070EA64 /* TopicCollectionViewCell */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		8458332B2648CCA70070EA64 /* TopicCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				845833312648CEBF0070EA64 /* TopicCollectionViewCell.swift */,
+				845833322648CEBF0070EA64 /* TopicCollectionViewCell.xib */,
+			);
+			path = TopicCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		8458332C2648CCB10070EA64 /* ImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8458332D2648CDD10070EA64 /* ImageCollectionViewCell.swift */,
+				8458332E2648CDD10070EA64 /* ImageCollectionViewCell.xib */,
+			);
+			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		845833352648D2B10070EA64 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8458333A2648D2EC0070EA64 /* Parts */,
+				845833362648D2C90070EA64 /* SearchView.storyboard */,
+				845833382648D2DD0070EA64 /* SearchViewController.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		8458333A2648D2EC0070EA64 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		8751F275774D9721953A1802 /* Pods */ = {
@@ -104,7 +162,6 @@
 				00D2C39176FE009A00FF90A4 /* Pods-W9-Project1-Gumi.debug.xcconfig */,
 				D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,8 +224,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845833342648CEBF0070EA64 /* TopicCollectionViewCell.xib in Resources */,
+				845833372648D2C90070EA64 /* SearchView.storyboard in Resources */,
 				845833272648C8790070EA64 /* HomeView.storyboard in Resources */,
 				8458331D2648C33F0070EA64 /* LaunchScreen.storyboard in Resources */,
+				845833302648CDD10070EA64 /* ImageCollectionViewCell.xib in Resources */,
 				8458331A2648C33F0070EA64 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */,
 				845833112648C33C0070EA64 /* AppDelegate.swift in Sources */,
 				845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */,
+				8458332F2648CDD10070EA64 /* ImageCollectionViewCell.swift in Sources */,
 				845833292648C88A0070EA64 /* HomeViewController.swift in Sources */,
+				845833332648CEBF0070EA64 /* TopicCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
