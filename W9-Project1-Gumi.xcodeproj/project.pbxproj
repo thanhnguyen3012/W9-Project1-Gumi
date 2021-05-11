@@ -20,6 +20,12 @@
 		845833372648D2C90070EA64 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845833362648D2C90070EA64 /* SearchView.storyboard */; };
 		845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833382648D2DD0070EA64 /* SearchViewController.swift */; };
 		8458333D2648D7D90070EA64 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458333C2648D7D90070EA64 /* HomeViewModel.swift */; };
+		845833402648DDA10070EA64 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458333F2648DDA10070EA64 /* ResponseError.swift */; };
+		845833422648DE3B0070EA64 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833412648DE3B0070EA64 /* TargetType.swift */; };
+		845833442648E0620070EA64 /* MyPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833432648E0620070EA64 /* MyPhoto.swift */; };
+		845833492648E1500070EA64 /* MyPhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833482648E1500070EA64 /* MyPhotoAPI.swift */; };
+		8458334B2648E7B30070EA64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458334A2648E7B30070EA64 /* User.swift */; };
+		8458334D2648E8BE0070EA64 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458334C2648E8BE0070EA64 /* APIManager.swift */; };
 		E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,12 @@
 		845833362648D2C90070EA64 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
 		845833382648D2DD0070EA64 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8458333C2648D7D90070EA64 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8458333F2648DDA10070EA64 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		845833412648DE3B0070EA64 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		845833432648E0620070EA64 /* MyPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhoto.swift; sourceTree = "<group>"; };
+		845833482648E1500070EA64 /* MyPhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotoAPI.swift; sourceTree = "<group>"; };
+		8458334A2648E7B30070EA64 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8458334C2648E8BE0070EA64 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.release.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +97,7 @@
 		8458330F2648C33C0070EA64 /* W9-Project1-Gumi */ = {
 			isa = PBXGroup;
 			children = (
+				8458333E2648DD900070EA64 /* Networking */,
 				8458333B2648D7BF0070EA64 /* Data */,
 				845833242648C8620070EA64 /* UI */,
 				845833102648C33C0070EA64 /* AppDelegate.swift */,
@@ -163,8 +176,29 @@
 		8458333B2648D7BF0070EA64 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				845833432648E0620070EA64 /* MyPhoto.swift */,
+				8458334A2648E7B30070EA64 /* User.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8458333E2648DD900070EA64 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				845833452648E1210070EA64 /* EndPoint */,
+				8458333F2648DDA10070EA64 /* ResponseError.swift */,
+				845833412648DE3B0070EA64 /* TargetType.swift */,
+				8458334C2648E8BE0070EA64 /* APIManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		845833452648E1210070EA64 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				845833482648E1500070EA64 /* MyPhotoAPI.swift */,
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 		8751F275774D9721953A1802 /* Pods */ = {
@@ -294,12 +328,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				845833392648D2DD0070EA64 /* SearchViewController.swift in Sources */,
+				845833492648E1500070EA64 /* MyPhotoAPI.swift in Sources */,
 				845833112648C33C0070EA64 /* AppDelegate.swift in Sources */,
 				8458333D2648D7D90070EA64 /* HomeViewModel.swift in Sources */,
 				845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */,
+				845833442648E0620070EA64 /* MyPhoto.swift in Sources */,
 				8458332F2648CDD10070EA64 /* ImageCollectionViewCell.swift in Sources */,
 				845833292648C88A0070EA64 /* HomeViewController.swift in Sources */,
+				8458334B2648E7B30070EA64 /* User.swift in Sources */,
 				845833332648CEBF0070EA64 /* TopicCollectionViewCell.swift in Sources */,
+				8458334D2648E8BE0070EA64 /* APIManager.swift in Sources */,
+				845833422648DE3B0070EA64 /* TargetType.swift in Sources */,
+				845833402648DDA10070EA64 /* ResponseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,9 @@ class HomeViewModel {
     
     weak var delegate: HomeViewModelEvents?
     
+    var listOfTopics = [String]()
+    var listOfImages = [UIImage]()
+    
     init(delegate: HomeViewModelEvents?) {
         self.delegate = delegate
     }

@@ -27,12 +27,38 @@ class HomeViewController: UIViewController {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
         imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+        
+        //Test call API by Alamofire
+        loading(page: 1, perPage: 3, completionHandler: { result in
+            switch result {
+            case .success(let listPhotos):
+                print("== Result list: \(listPhotos!.count)")
+                for photo in listPhotos! {
+                    print(photo.categories!)
+                }
+            case .failure(let error):
+                print("== Error: \(error.localizedDescription)")
+            }
+        })
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SearchView", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "searchViewController")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func loading(page: Int, perPage: Int, completionHandler: @escaping (_ result: Result<[MyPhoto]?, ResponseError>) -> ()) {
+        APIManager.shared.call(type: MyPhotoAPI.getListPhotos(page: page, perPage: perPage), params: nil) { (result: Result<[MyPhoto]?, ResponseError>) in
+            switch result {
+            case .success(let myPhotos):
+                print("==Success: \(myPhotos)")
+                completionHandler(.success(myPhotos))
+            case .failure(let error):
+                print("==Error: \(error)")
+                completionHandler(.failure(error))
+            }
+        }
     }
 }
 
