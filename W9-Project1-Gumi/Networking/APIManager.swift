@@ -14,10 +14,12 @@ class APIManager {
     private init() { }
     
     func call<T>(type: TargetType, params: Parameters?, completionHandler: @escaping (_ result: Result<[T]?, ResponseError>)-> ()) where T: Codable {
-        print("Test")
+        print("Test url request: \(type.url)")
+        let p : Parameters = ["page": "1", "per_page": "3"]
+        print("=== \(p)")
         AF.request(type.url,
                    method: type.httpMethod,
-                   parameters: params,
+                   parameters: p,//params,
                    encoding: type.encoding,
                    headers: type.headers)
             .validate()

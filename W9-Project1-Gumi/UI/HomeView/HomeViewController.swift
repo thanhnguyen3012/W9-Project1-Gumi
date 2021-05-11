@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
@@ -34,7 +35,7 @@ class HomeViewController: UIViewController {
             case .success(let listPhotos):
                 print("== Result list: \(listPhotos!.count)")
                 for photo in listPhotos! {
-                    print(photo.categories!)
+                    print(photo.description)
                 }
             case .failure(let error):
                 print("== Error: \(error.localizedDescription)")
@@ -49,7 +50,8 @@ class HomeViewController: UIViewController {
     }
     
     func loading(page: Int, perPage: Int, completionHandler: @escaping (_ result: Result<[MyPhoto]?, ResponseError>) -> ()) {
-        APIManager.shared.call(type: MyPhotoAPI.getListPhotos(page: page, perPage: perPage), params: nil) { (result: Result<[MyPhoto]?, ResponseError>) in
+        let par : Parameters = ["per_page" : "1"]
+        APIManager.shared.call(type: MyPhotoAPI.getListPhotos(page: page, perPage: perPage), params: par) { (result: Result<[MyPhoto]?, ResponseError>) in
             switch result {
             case .success(let myPhotos):
                 print("==Success: \(myPhotos)")

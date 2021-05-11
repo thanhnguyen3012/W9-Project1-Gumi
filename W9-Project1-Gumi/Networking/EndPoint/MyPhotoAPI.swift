@@ -15,13 +15,15 @@ enum MyPhotoAPI {
 // MARK: - MyPhotoAPI
 extension MyPhotoAPI: TargetType {
     var baseURL: String {
-//        "https://api.unsplash.com/"
+        "https://api.unsplash.com/"
+//        "https://api.unsplash.com/photos/?client_id=X8UfN6XkWcMtjfp9RbMJnZJIAylr6K61Elq39hOLeZs&per_page=5&order_by=popular&page=1"
     }
     
     var path: String {
         switch self {
         case .getListPhotos:
-            return "photos"
+            return "photos/"
+//        return ""
         }
     }
     
@@ -33,17 +35,22 @@ extension MyPhotoAPI: TargetType {
     }
     
     var headers: HTTPHeaders? {
-        return ["Content-Type": "application/json"]
+//        return ["Content-Type": "application/json"]
+        return nil
     }
     
     var url: URL {
-        return URL(string: self.baseURL + self.path)!
+        let plist = NSDictionary(contentsOfFile: "/Users/admin/Desktop/Gumi/W9-Project1-Gumi/W9-Project1-Gumi/Keys.plist")
+        let key = plist?.object(forKey: "API_KEY") as! String
+        return URL(string: self.baseURL + self.path + "?client_id=" + key)!
+//        return URL(string: "\(self.baseURL)\(self.path)client_id=\(KEY) ---- điền params chổ này")
     }
     
     var encoding: ParameterEncoding {
         switch self {
         case .getListPhotos:
-            return JSONEncoding.default
+//            return JSONEncoding.default
+            return URLEncoding.default
         }
     }
 }
