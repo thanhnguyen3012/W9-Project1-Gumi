@@ -89,15 +89,28 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (indexPath.row == viewModel.listOfMyPhotos.count - 1) {
+            print("LOAD MORE")
+            viewModel.getListOfPhoto()
+        }
+    }
 }
 
+
 extension HomeViewController: HomeViewModelEvents {
+    
     func showError(_ alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
     }
     
-    func returnData() {
+    func returnPhotos() {
+        print("RELOAD \(viewModel.listOfMyPhotos.count)")
         imagesCollectionView.reloadData()
+    }
+    
+    func returnTopics() {
         topicsCollectionView.reloadData()
     }
 }

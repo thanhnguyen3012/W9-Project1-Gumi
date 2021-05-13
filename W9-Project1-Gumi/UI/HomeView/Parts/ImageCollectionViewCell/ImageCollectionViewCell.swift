@@ -21,6 +21,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        <#code#>
+    }
+    
     func loadImage(url: String, index: Int) {
         thumbnailImageView.getImage(url: url, completionHandler: { (img) in
             guard let image = img else {

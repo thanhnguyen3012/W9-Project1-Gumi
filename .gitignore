@@ -88,5 +88,3 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-
-/W9-Project1-Gumi/Keys.plist

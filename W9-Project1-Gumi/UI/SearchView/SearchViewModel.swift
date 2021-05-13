@@ -31,7 +31,7 @@ class SearchViewModel {
     
     func search(key: String, scope: String) {
         let params: Parameters? = ["query": key]
-        APIManager.shared.call(type: MyPhotoAPI.searchPhotos, params: params, completionHandler: { (result: Result<[SearchResults<MyPhoto>]?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.searchPhotos, completionHandler: { (result: Result<[SearchResults<MyPhoto>]?, ResponseError>) in
             switch result {
             case .success(let list):
                 self.listOfPhotos = list?[0].results ?? []

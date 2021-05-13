@@ -47,12 +47,21 @@ extension TopicViewController: UITableViewDataSource {
         cell.loadImage(url: viewModel.listOfMyPhotos[indexPath.row].urls?.thumbnail ?? "")
         return cell
     }
-    
-    
 }
 
 extension TopicViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let width = tableView.frame.width
+        let size = viewModel.getPhotoSize(atIndex: indexPath.row)
+        return width * (size.height / size.width)
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailsView", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "detailsViewController") as DetailsViewController
+        vc.myPhoto = viewModel.listOfMyPhotos[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension TopicViewController: TopicViewModelEvents {
@@ -63,6 +72,4 @@ extension TopicViewController: TopicViewModelEvents {
     func showError(_ alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
     }
-    
-    
 }

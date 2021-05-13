@@ -43,7 +43,7 @@
 		84B35552264CE26C00C30023 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35551264CE26C00C30023 /* SearchViewModel.swift */; };
 		84B35554264D082200C30023 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35553264D082200C30023 /* SearchResults.swift */; };
 		84B35556264D128800C30023 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35555264D128800C30023 /* DetailsViewModel.swift */; };
-		84B5C0D6264A96C8001213D5 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B5C0D5264A96C8001213D5 /* Keys.plist */; };
+		84B35558264D24D700C30023 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B35557264D24D700C30023 /* Keys.plist */; };
 		E9A03DBE5CFE8FE4B4409504 /* Pods_W9_Project1_Gumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +88,7 @@
 		84B35551264CE26C00C30023 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		84B35553264D082200C30023 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		84B35555264D128800C30023 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
-		84B5C0D5264A96C8001213D5 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		84B35557264D24D700C30023 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		D0F1C1E5F370711735FC7563 /* Pods-W9-Project1-Gumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.release.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +159,7 @@
 				845833192648C33F0070EA64 /* Assets.xcassets */,
 				8458331B2648C33F0070EA64 /* LaunchScreen.storyboard */,
 				8458331E2648C33F0070EA64 /* Info.plist */,
-				84B5C0D5264A96C8001213D5 /* Keys.plist */,
+				84B35557264D24D700C30023 /* Keys.plist */,
 			);
 			path = "W9-Project1-Gumi";
 			sourceTree = "<group>";
@@ -381,12 +381,12 @@
 			files = (
 				845833342648CEBF0070EA64 /* TopicCollectionViewCell.xib in Resources */,
 				84B3553D264CC66C00C30023 /* DetailsView.storyboard in Resources */,
+				84B35558264D24D700C30023 /* Keys.plist in Resources */,
 				84B35547264CCC2300C30023 /* PhotoTableViewCell.xib in Resources */,
 				84B35550264CE18300C30023 /* ResultTableViewCell.xib in Resources */,
 				845833372648D2C90070EA64 /* SearchView.storyboard in Resources */,
 				845833272648C8790070EA64 /* HomeView.storyboard in Resources */,
 				8458331D2648C33F0070EA64 /* LaunchScreen.storyboard in Resources */,
-				84B5C0D6264A96C8001213D5 /* Keys.plist in Resources */,
 				84B35536264CB5A000C30023 /* TopicView.storyboard in Resources */,
 				845833302648CDD10070EA64 /* ImageCollectionViewCell.xib in Resources */,
 				8458331A2648C33F0070EA64 /* Assets.xcassets in Resources */,
@@ -610,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7FP62JQUP;
 				INFOPLIST_FILE = "W9-Project1-Gumi/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7FP62JQUP;
 				INFOPLIST_FILE = "W9-Project1-Gumi/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

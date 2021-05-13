@@ -21,7 +21,7 @@ class PhotoTableViewCell: UITableViewCell {
     
     func loadImage(url stringUrl: String) {
         photoImageView.getImage(url: stringUrl, completionHandler: { img in
-            if let image = img {
+            if let _ = img {
                 print("SUCCESS")
             } else {
                 print("FAIL")

@@ -26,7 +26,9 @@ class TopicViewModel {
     
     func getMyPhotoFromTopic() {
         guard let topicID = topic?.id else { return }
-        APIManager.shared.call(type: MyPhotoAPI.getPhotosOfTopic(id: topicID), params: nil, completionHandler: { (result: Result<[MyPhoto]?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.getPhotosOfTopic(id: topicID), completionHandler: {[weak self] (result: Result<[MyPhoto]?, ResponseError>) in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let list):
                 self.listOfMyPhotos = list ?? []
@@ -37,5 +39,9 @@ class TopicViewModel {
                 self.delegate?.showError(alert)
             }
         })
+    }
+    
+    func getPhotoSize(atIndex index: Int) -> CGSize {
+        return CGSize(width: listOfMyPhotos[index].width ?? 0, height: listOfMyPhotos[index].height ?? 0)
     }
 }
