@@ -11,9 +11,17 @@ import Foundation
 class User: Codable {
     let id: String?
     let name: String?
+    let profileImageUrl: ProfileImageUrls?
     
     enum UserCodingKeys: String, CodingKey {
         case id
         case name
+        case profileImageUrl = "profile_image"
     }
+}
+
+class ProfileImageUrls: Codable {
+    let small: String?
+    let medium: String?
+    let large: String?
 }

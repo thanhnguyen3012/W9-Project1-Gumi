@@ -7,16 +7,31 @@
 
 import UIKit
 
+protocol ImageCollectionViewCellDelegate {
+    func imageCollectionViewCellDelegate(_ imageCollectionViewCell: ImageCollectionViewCell, _ loadedPhotoAt: UIImage, indexPath: Int)
+}
+
 class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    var delegate: ImageCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func bindData(img: UIImage) {
-        thumbnailImageView.image = img
+    func loadImage(url: String, index: Int) {
+        thumbnailImageView.getImage(url: url, completionHandler: { (img) in
+            guard let image = img else {
+                self.thumbnailImageView.image = UIImage(named: "placeholder")
+                return
+            }
+            if self.tag == index {
+                self.thumbnailImageView.image = image
+                self.delegate?.imageCollectionViewCellDelegate(self, image, indexPath: self.tag)
+            }
+        })
     }
     
     static var identifier: String {
@@ -26,5 +41,4 @@ class ImageCollectionViewCell: UICollectionViewCell {
     static var nib : UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-
 }

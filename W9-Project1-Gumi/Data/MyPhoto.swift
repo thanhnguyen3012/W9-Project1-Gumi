@@ -8,6 +8,7 @@
 import UIKit
 
 class MyPhoto: Codable {
+    var id: String?
     var urls: MyPhotosURLs?
     var user: User?
     var description: String?
@@ -16,7 +17,8 @@ class MyPhoto: Codable {
     var height: Int?
     var categories : [String]?
     
-    enum MyPhotoCodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
+        case id
         case urls
         case user
         case description
@@ -28,12 +30,12 @@ class MyPhoto: Codable {
 }
 
 class MyPhotosURLs: Codable {
-    var thumbnail: String?
     var raw: String?
+    var thumbnail: String?
     
-    enum  URLsCodingKeys: String, CodingKey {
-        case thumbnail = "thumb"
+    enum  CodingKeys: String, CodingKey {
         case raw
+        case thumbnail = "thumb"
     }
 }
 
