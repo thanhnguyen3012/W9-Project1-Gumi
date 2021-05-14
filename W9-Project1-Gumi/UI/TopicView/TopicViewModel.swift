@@ -34,9 +34,7 @@ class TopicViewModel {
                 self.listOfMyPhotos = list ?? []
                 self.delegate?.loadedMyPhoto()
             case .failure(let error):
-                let alert = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.delegate?.showError(alert)
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
             }
         })
     }
