@@ -28,7 +28,9 @@ class HomeViewModel {
     //MARK: - This function calls API and update listOfMyPhotos if success
     func getListOfPhoto() {
         page += 1
-        APIManager.shared.call(type: MyPhotoAPI.getListPhotos(page: page, perPage: 20), completionHandler: { (result: Result<[MyPhoto]?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.getListPhotos(page: page, perPage: 20), completionHandler: { [weak self] (result: Result<[MyPhoto]?, ResponseError>) in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let list):
                 guard list != nil else { return }
@@ -37,17 +39,16 @@ class HomeViewModel {
                 self.delegate?.returnPhotos()
             case .failure(let error):
                 print("FAIL LOAD PHOTOS \(error.localizedDescription)")
-<<<<<<< HEAD
-                self.delegate?.showError(APIManager.createAlert(error: error))
-=======
                 self.delegate?.showError(APIManager.createErrorAlert(error: error))
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
     
     func getListOfTopic() {
-        APIManager.shared.call(type: MyPhotoAPI.getListTopics, completionHandler: { (result: Result<[Topic]?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.getListTopics, completionHandler: { [weak self] (result: Result<[Topic]?, ResponseError>) in
+            
+            guard let self = self else { return }
+            
             switch result {
             case .success(let list):
                 guard list != nil else { return }
@@ -56,11 +57,7 @@ class HomeViewModel {
                 self.delegate?.returnTopics()
             case .failure(let error):
                 print("FAIL LOAD TOPICS \(error.localizedDescription)")
-<<<<<<< HEAD
-                self.delegate?.showError(APIManager.createAlert(error: error))
-=======
                 self.delegate?.showError(APIManager.createErrorAlert(error: error))
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }

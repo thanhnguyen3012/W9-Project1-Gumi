@@ -31,11 +31,14 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
     
     func loadImage(url: String, index: Int) {
-        thumbnailImageView.getImage(url: url, completionHandler: { (img) in
+        thumbnailImageView.getImage(url: url, completionHandler: { [weak self] (img) in
+            guard let self = self else { return }
+            
             guard let image = img else {
                 self.thumbnailImageView.image = UIImage(named: "placeholder")
                 return
             }
+            
             if self.tag == index {
                 self.thumbnailImageView.image = image
                 self.delegate?.imageCollectionViewCellDelegate(self, image, indexPath: self.tag)

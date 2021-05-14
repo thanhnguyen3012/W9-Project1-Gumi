@@ -45,54 +45,50 @@ class SearchViewModel {
     
     func searchPhotos(key: String) {
         searchMode = 0
-        APIManager.shared.call(type: MyPhotoAPI.searchPhotos(query: key), completionHandler: { (result: Result<SearchResults<MyPhoto>?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.searchPhotos(query: key), completionHandler: { [weak self] (result: Result<SearchResults<MyPhoto>?, ResponseError>) in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let myResult):
                 self.listOfPhotos = myResult?.results ?? []
                 self.amountOfResults = self.listOfPhotos.count
                 self.delegate?.loadedPhotos()
             case .failure(let error):
-<<<<<<< HEAD
-                self.delegate?.showError(APIManager.createAlert(error: error))
-=======
                 self.delegate?.showError(APIManager.createErrorAlert(error: error))
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
     
     func searchCollections(key: String) {
         searchMode = 1
-        APIManager.shared.call(type: MyPhotoAPI.searchCollections(query: key), completionHandler: { (result: Result<SearchResults<Collection>?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.searchCollections(query: key), completionHandler: { [weak self] (result: Result<SearchResults<Collection>?, ResponseError>) in
+            
+            guard let self = self else { return }
+            
             switch result {
             case .success(let myResult):
                 self.listOfCollections = myResult?.results ?? []
                 self.amountOfResults = self.listOfCollections.count
                 self.delegate?.loadedCollections()
             case .failure(let error):
-<<<<<<< HEAD
-                self.delegate?.showError(APIManager.createAlert(error: error))
-=======
                 self.delegate?.showError(APIManager.createErrorAlert(error: error))
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
     
     func searchUsers(key: String) {
         searchMode = 2
-        APIManager.shared.call(type: MyPhotoAPI.searchUsers(query: key), completionHandler: { [self] (result: Result<SearchResults<User>?, ResponseError>) in
+        APIManager.shared.call(type: MyPhotoAPI.searchUsers(query: key), completionHandler: { [weak self] (result: Result<SearchResults<User>?, ResponseError>) in
+            
+            guard let self = self else { return }
+            
             switch result {
             case .success(let myResult):
                 self.listOfUsers = myResult?.results ?? []
                 self.amountOfResults = self.listOfUsers.count
                 self.delegate?.loadedUsers()
             case .failure(let error):
-<<<<<<< HEAD
-                self.delegate?.showError(APIManager.createAlert(error: error))
-=======
                 self.delegate?.showError(APIManager.createErrorAlert(error: error))
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
         

@@ -64,18 +64,12 @@ class APIManager {
                 }
             }
     }
-    
-<<<<<<< HEAD
-    static func createAlert(error: ResponseError) -> UIAlertController {
-        let alert = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-=======
     static func createErrorAlert(error: ResponseError) -> UIAlertController {
         var err = ""
         for e in error.errors ?? [] {
             err = err + e + "\n"
         }
         let alert = UIAlertController(title: "Error", message: err, preferredStyle: .alert)
->>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         return alert
     }
