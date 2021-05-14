@@ -12,9 +12,9 @@ enum MyPhotoAPI {
     case getListPhotos(page: Int, perPage: Int)
     case getListTopics
     case getPhotosOfTopic(id: String)
-    case searchPhotos
-    case searchCollections
-    case searchUsers
+    case searchPhotos(query: String)
+    case searchCollections(query: String)
+    case searchUsers(query: String)
 }
 
 // MARK: - MyPhotoAPI
@@ -52,6 +52,8 @@ extension MyPhotoAPI: TargetType {
         switch self {
         case .getListPhotos(let page, let perPage):
             return ["page": page, "per_page": perPage]
+        case .searchPhotos(let query), .searchCollections(let query), .searchUsers(let query):
+            return ["query": query]
         default:
             return nil
         }
@@ -60,7 +62,8 @@ extension MyPhotoAPI: TargetType {
     var headers: HTTPHeaders? {
         let plist = NSDictionary(contentsOfFile: "/Users/admin/Desktop/Gumi/W9-Project1-Gumi/W9-Project1-Gumi/Keys.plist")
         let key = plist?.object(forKey: "API_KEY") as! String
-        return ["Authorization": "Client-ID \(key)"]
+        return ["Authorization": "Client-ID \(key)",
+                "Content-Type" : "application/json"]
     }
     
     var url: URL {
