@@ -31,7 +31,8 @@ class APIManager {
                    method: type.httpMethod,
                    parameters: type.parameters,
                    encoding: type.encoding,
-                   headers: type.headers)
+                   headers: type.headers,
+                   requestModifier: { $0.timeoutInterval = 30 })
             .validate()
             .responseJSON { data in
                 switch data.result {
@@ -43,10 +44,9 @@ class APIManager {
                         completionHandler(.success(result))
                     }
                 case .failure(_):
-                    let decoder = JSONDecoder()
-                    if let jsonData = data.data, let error = try? decoder.decode(ResponseError.self, from: jsonData) {
-                        completionHandler(.failure(error))
-                    }
+                    let error = ResponseError()
+                    error.errors = [data.error!.localizedDescription]
+                    completionHandler(.failure(error))
                     break
                 }
             }
@@ -66,7 +66,8 @@ class APIManager {
                    method: type.httpMethod,
                    parameters: type.parameters,
                    encoding: type.encoding,
-                   headers: type.headers)
+                   headers: type.headers,
+                   requestModifier: { $0.timeoutInterval = 30 })
             .validate()
             .responseJSON { data in
                 switch data.result {
@@ -78,10 +79,9 @@ class APIManager {
                         completionHandler(.success(result))
                     }
                 case .failure(_):
-                    let decoder = JSONDecoder()
-                    if let jsonData = data.data, let error = try? decoder.decode(ResponseError.self, from: jsonData) {
-                        completionHandler(.failure(error))
-                    }
+                    let error = ResponseError()
+                    error.errors = [data.error!.localizedDescription]
+                    completionHandler(.failure(error))
                     break
                 }
             }
