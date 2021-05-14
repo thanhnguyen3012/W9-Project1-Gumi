@@ -44,8 +44,11 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         guard let searchKey = searchBar.text else { return }
         let scope = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex] ?? "Photos"
+        
+        print("SEARCH '\(searchKey)' in '\(scope)'")
         viewModel.search(key: searchKey, scope: scope)
     }
     
@@ -72,7 +75,12 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailsView", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController else { return }
+        vc.myPhoto = viewModel.listOfPhotos[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension SearchViewController: SearchViewModelEvents {
@@ -82,14 +90,20 @@ extension SearchViewController: SearchViewModelEvents {
     
     func loadedPhotos() {
         print("Searched photos.")
+        resultsTableView.allowsSelection = true
+        resultsTableView.reloadData()
     }
     
     func loadedCollections() {
         print("Searched collections")
+        resultsTableView.allowsSelection = false
+        resultsTableView.reloadData()
     }
     
     func loadedUsers() {
         print("Searched users")
+        resultsTableView.allowsSelection = false
+        resultsTableView.reloadData()
     }
     
     
