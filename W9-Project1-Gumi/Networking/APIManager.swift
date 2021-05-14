@@ -43,9 +43,10 @@ class APIManager {
                         let result = try! decoder.decode([T].self, from: jsonData)
                         completionHandler(.success(result))
                     }
-                case .failure(_):
+                case .failure(let er):
                     let error = ResponseError()
-                    error.errors = [data.error!.localizedDescription]
+                    print("Errrrrr \(er)")
+                    error.errors = er.isSessionTaskError ? [er.localizedDescription] : [self.handleErrorCode(er.responseCode ?? 0)]
                     completionHandler(.failure(error))
                     break
                 }
@@ -78,13 +79,33 @@ class APIManager {
                         let result = try! decoder.decode(T.self, from: jsonData)
                         completionHandler(.success(result))
                     }
-                case .failure(_):
+                case .failure(let er):
                     let error = ResponseError()
-                    error.errors = [data.error!.localizedDescription]
+                    print("Errrrrr \(er)")
+                    error.errors = er.isSessionTaskError ? [er.localizedDescription] : [self.handleErrorCode(er.responseCode ?? 0)]
                     completionHandler(.failure(error))
                     break
                 }
             }
+    }
+    
+    private func handleErrorCode(_ errorCode: Int) -> String {
+        switch errorCode {
+        case 400:
+            return "The request was unacceptable, often due to missing a required parameter."
+        case 401:
+            return "Invalid Access Token."
+        case 403:
+            return "Missing permissions to perform request."
+        case 404:
+            return "The requested resource doesn’t exist."
+        case 500, 503:
+            return "Something went wrong on our end."
+        case -1001:
+            return "Request timeout."
+        default:
+            return ""
+        }
     }
     
     static func createErrorAlert(error: ResponseError) -> UIAlertController {
