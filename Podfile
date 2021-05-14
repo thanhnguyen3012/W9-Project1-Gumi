@@ -6,7 +6,8 @@ target 'W9-Project1-Gumi' do
   use_frameworks!
 
   # Pods for W9-Project1-Gumi
-	pod 'Alamofire', '~> 5.2'
+  pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 6.0'
+  pod "CollectionViewWaterfallLayout"
 
 end

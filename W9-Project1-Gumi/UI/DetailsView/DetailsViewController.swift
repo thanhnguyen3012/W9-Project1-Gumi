@@ -36,6 +36,7 @@ class DetailsViewController: UIViewController {
         })
         authorLabel.text = myPhoto.user?.name ?? "Undefined"
         titleLabel.text = myPhoto.description ?? "Untitle"
+        
         descriptionTextView.text = myPhoto.altDescription ?? "No description"
         descriptionTextView.sizeToFit()
         descriptionTextView.isScrollEnabled = false

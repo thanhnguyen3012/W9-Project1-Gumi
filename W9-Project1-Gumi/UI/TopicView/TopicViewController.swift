@@ -53,6 +53,7 @@ extension TopicViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let width = tableView.frame.width
         let size = viewModel.getPhotoSize(atIndex: indexPath.row)
+        // 
         return width * (size.height / size.width)
     }
     
