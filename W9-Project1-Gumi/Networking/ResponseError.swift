@@ -9,5 +9,5 @@ import Foundation
 
 class ResponseError: Codable, Error {
     var key: String?
-    var message: String
+    var errors: [String]?
 }
