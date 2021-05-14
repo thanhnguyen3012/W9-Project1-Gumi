@@ -84,7 +84,7 @@ extension SearchViewController: UITableViewDelegate {
 }
 
 extension SearchViewController: SearchViewModelEvents {
-    func showErorr(_ alert: UIAlertController) {
+    func showError(_ alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
     }
     

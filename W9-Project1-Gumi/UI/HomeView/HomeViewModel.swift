@@ -37,7 +37,7 @@ class HomeViewModel {
                 self.delegate?.returnPhotos()
             case .failure(let error):
                 print("FAIL LOAD PHOTOS \(error.localizedDescription)")
-                self.delegate?.showError(self.createAlert(error: error))
+                self.delegate?.showError(APIManager.createAlert(error: error))
             }
         })
     }
@@ -52,14 +52,8 @@ class HomeViewModel {
                 self.delegate?.returnTopics()
             case .failure(let error):
                 print("FAIL LOAD TOPICS \(error.localizedDescription)")
-                self.delegate?.showError(self.createAlert(error: error))
+                self.delegate?.showError(APIManager.createAlert(error: error))
             }
         })
-    }
-    
-    func createAlert(error: ResponseError) -> UIAlertController {
-        let alert = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        return alert
     }
 }

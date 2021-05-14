@@ -12,7 +12,7 @@ protocol SearchViewModelEvents: AnyObject {
     func loadedPhotos()
     func loadedCollections()
     func loadedUsers()
-    func showErorr(_ alert: UIAlertController)
+    func showError(_ alert: UIAlertController)
 }
 
 class SearchViewModel {
@@ -52,7 +52,7 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfPhotos.count
                 self.delegate?.loadedPhotos()
             case .failure(let error):
-                self.delegate?.showErorr(self.createErrorAlert(error: error))
+                self.delegate?.showError(APIManager.createAlert(error: error))
             }
         })
     }
@@ -66,7 +66,7 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfCollections.count
                 self.delegate?.loadedCollections()
             case .failure(let error):
-                self.delegate?.showErorr(self.createErrorAlert(error: error))
+                self.delegate?.showError(APIManager.createAlert(error: error))
             }
         })
     }
@@ -80,7 +80,7 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfUsers.count
                 self.delegate?.loadedUsers()
             case .failure(let error):
-                self.delegate?.showErorr(self.createErrorAlert(error: error))
+                self.delegate?.showError(APIManager.createAlert(error: error))
             }
         })
         
@@ -100,11 +100,5 @@ class SearchViewModel {
         default:
             return
         }
-    }
-    
-    private func createErrorAlert(error: ResponseError) -> UIAlertController {
-        let alert = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        return alert
     }
 }

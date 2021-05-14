@@ -60,7 +60,8 @@ extension MyPhotoAPI: TargetType {
     }
     
     var headers: HTTPHeaders? {
-        let plist = NSDictionary(contentsOfFile: "/Users/admin/Desktop/Gumi/W9-Project1-Gumi/W9-Project1-Gumi/Keys.plist")
+        let path = Bundle.main.path(forResource: "Keys", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile: path!)
         let key = plist?.object(forKey: "API_KEY") as! String
         return ["Authorization": "Client-ID \(key)",
                 "Content-Type" : "application/json"]
