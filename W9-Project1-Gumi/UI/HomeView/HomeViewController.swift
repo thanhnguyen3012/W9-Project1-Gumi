@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
         imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
-        imagesCollectionView.collectionViewLayout = CustomCollectionViewFlowLayout()
         
         viewModel.getListOfPhoto()
         viewModel.getListOfTopic()
@@ -91,13 +90,23 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if (indexPath.row == viewModel.listOfMyPhotos.count - 1) {
+        if ((collectionView == imagesCollectionView) && (indexPath.row == viewModel.listOfMyPhotos.count - 1)) {
             print("LOAD MORE")
             viewModel.getListOfPhoto()
         }
     }
 }
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == imagesCollectionView {
+            let width = (collectionView.frame.width - 45) / 2
+            return CGSize(width: width, height: width)
+        } else {
+            return topicsCollectionView.contentSize
+        }
+    }
+}
 
 extension HomeViewController: HomeViewModelEvents {
     
@@ -108,6 +117,7 @@ extension HomeViewController: HomeViewModelEvents {
     func returnPhotos() {
         print("RELOAD \(viewModel.listOfMyPhotos.count)")
         imagesCollectionView.reloadData()
+        
     }
     
     func returnTopics() {

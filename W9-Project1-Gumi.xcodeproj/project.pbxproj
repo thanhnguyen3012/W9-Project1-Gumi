@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8411233C264AE48E002C70AB /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411233B264AE48E002C70AB /* UIImageView+Cache.swift */; };
-		841642D8264BD665001D03B5 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841642D7264BD665001D03B5 /* CustomCollectionViewFlowLayout.swift */; };
 		841642DA264BDBA5001D03B5 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841642D9264BDBA5001D03B5 /* Topic.swift */; };
 		845833112648C33C0070EA64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833102648C33C0070EA64 /* AppDelegate.swift */; };
 		845833132648C33C0070EA64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845833122648C33C0070EA64 /* SceneDelegate.swift */; };
@@ -51,7 +50,6 @@
 		00D2C39176FE009A00FF90A4 /* Pods-W9-Project1-Gumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W9-Project1-Gumi.debug.xcconfig"; path = "Target Support Files/Pods-W9-Project1-Gumi/Pods-W9-Project1-Gumi.debug.xcconfig"; sourceTree = "<group>"; };
 		65D200504EA10D852F04854F /* Pods_W9_Project1_Gumi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W9_Project1_Gumi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8411233B264AE48E002C70AB /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
-		841642D7264BD665001D03B5 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		841642D9264BDBA5001D03B5 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		8458330D2648C33C0070EA64 /* W9-Project1-Gumi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "W9-Project1-Gumi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		845833102648C33C0070EA64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,14 +119,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		841642D6264BD659001D03B5 /* CustomCollectionViewFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				841642D7264BD665001D03B5 /* CustomCollectionViewFlowLayout.swift */,
-			);
-			path = CustomCollectionViewFlowLayout;
-			sourceTree = "<group>";
-		};
 		845833042648C33C0070EA64 = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +179,6 @@
 		8458332A2648CCA10070EA64 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
-				841642D6264BD659001D03B5 /* CustomCollectionViewFlowLayout */,
 				8458332C2648CCB10070EA64 /* ImageCollectionViewCell */,
 				8458332B2648CCA70070EA64 /* TopicCollectionViewCell */,
 			);
@@ -461,7 +450,6 @@
 				84B35549264CCD4F00C30023 /* TopicViewModel.swift in Sources */,
 				84B35556264D128800C30023 /* DetailsViewModel.swift in Sources */,
 				84B3553F264CC67A00C30023 /* DetailsViewController.swift in Sources */,
-				841642D8264BD665001D03B5 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				84B35552264CE26C00C30023 /* SearchViewModel.swift in Sources */,
 				8458334D2648E8BE0070EA64 /* APIManager.swift in Sources */,
 				84B35538264CB5B300C30023 /* TopicViewController.swift in Sources */,

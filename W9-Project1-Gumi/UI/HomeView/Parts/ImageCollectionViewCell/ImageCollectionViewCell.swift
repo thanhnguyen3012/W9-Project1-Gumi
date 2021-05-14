@@ -19,10 +19,15 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 10
+        
+        thumbnailImageView.contentMode = .scaleAspectFill
     }
     
     override func prepareForReuse() {
-        <#code#>
+        thumbnailImageView.image = nil
     }
     
     func loadImage(url: String, index: Int) {
