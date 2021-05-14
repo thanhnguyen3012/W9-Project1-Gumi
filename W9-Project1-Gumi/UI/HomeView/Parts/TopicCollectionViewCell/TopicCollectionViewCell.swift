@@ -18,6 +18,11 @@ class TopicCollectionViewCell: UICollectionViewCell {
     
     func bindData(topic: String) {
         topicLabel.text = topic
+        topicLabel.sizeToFit()
+        if self.tag > 0 {
+            topicLabel.textColor = .systemGray
+            highlighterView.backgroundColor = .clear
+        }
     }
     
     static var identifier: String {

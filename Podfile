@@ -7,5 +7,6 @@ target 'W9-Project1-Gumi' do
 
   # Pods for W9-Project1-Gumi
 	pod 'Alamofire', '~> 5.2'
+  pod 'Kingfisher', '~> 6.0'
 
 end
