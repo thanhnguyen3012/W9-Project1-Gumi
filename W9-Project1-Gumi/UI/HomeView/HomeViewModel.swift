@@ -37,7 +37,11 @@ class HomeViewModel {
                 self.delegate?.returnPhotos()
             case .failure(let error):
                 print("FAIL LOAD PHOTOS \(error.localizedDescription)")
+<<<<<<< HEAD
                 self.delegate?.showError(APIManager.createAlert(error: error))
+=======
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
+>>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
@@ -52,7 +56,11 @@ class HomeViewModel {
                 self.delegate?.returnTopics()
             case .failure(let error):
                 print("FAIL LOAD TOPICS \(error.localizedDescription)")
+<<<<<<< HEAD
                 self.delegate?.showError(APIManager.createAlert(error: error))
+=======
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
+>>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }

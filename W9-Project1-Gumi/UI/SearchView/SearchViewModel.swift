@@ -52,7 +52,11 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfPhotos.count
                 self.delegate?.loadedPhotos()
             case .failure(let error):
+<<<<<<< HEAD
                 self.delegate?.showError(APIManager.createAlert(error: error))
+=======
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
+>>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
@@ -66,7 +70,11 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfCollections.count
                 self.delegate?.loadedCollections()
             case .failure(let error):
+<<<<<<< HEAD
                 self.delegate?.showError(APIManager.createAlert(error: error))
+=======
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
+>>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
     }
@@ -80,7 +88,11 @@ class SearchViewModel {
                 self.amountOfResults = self.listOfUsers.count
                 self.delegate?.loadedUsers()
             case .failure(let error):
+<<<<<<< HEAD
                 self.delegate?.showError(APIManager.createAlert(error: error))
+=======
+                self.delegate?.showError(APIManager.createErrorAlert(error: error))
+>>>>>>> 9ae1bb0161be1b4d174ba67d97533a95bbc9237a
             }
         })
         

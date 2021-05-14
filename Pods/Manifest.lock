@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.2)
+  - CollectionViewWaterfallLayout (0.5.0)
   - Kingfisher (6.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - CollectionViewWaterfallLayout
   - Kingfisher (~> 6.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CollectionViewWaterfallLayout
     - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  CollectionViewWaterfallLayout: 4399ba01be265fff4da1ed1d607130fe009780e4
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
 
-PODFILE CHECKSUM: c7fbb6d68aa7d28ad434ed99d400831e3ab4147a
+PODFILE CHECKSUM: f5259f04c47bd4e1c7baedb6e84cb9df1c9dcbff
 
 COCOAPODS: 1.10.1
