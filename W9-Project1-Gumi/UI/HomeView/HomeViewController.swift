@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import CollectionViewWaterfallLayout
 
 class HomeViewController: UIViewController {
 
@@ -44,14 +45,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch collectionView {
-        case imagesCollectionView:
+        if collectionView == imagesCollectionView {
             return viewModel.listOfMyPhotos.count
-        case topicsCollectionView:
-            return viewModel.listOfTopics.count
-        default:
-            return 0
         }
+        return viewModel.listOfTopics.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -117,7 +114,6 @@ extension HomeViewController: HomeViewModelEvents {
     func returnPhotos() {
         print("RELOAD \(viewModel.listOfMyPhotos.count)")
         imagesCollectionView.reloadData()
-        
     }
     
     func returnTopics() {
