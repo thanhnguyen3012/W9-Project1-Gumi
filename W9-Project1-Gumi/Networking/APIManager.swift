@@ -13,7 +13,20 @@ class APIManager {
     
     private init() { }
     
+    static var isInternetConnected: Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
+    }
+    
     func call<T>(type: TargetType, completionHandler: @escaping (_ result: Result<[T]?, ResponseError>)-> ()) where T: Codable {
+        
+        //Check internet connection
+        if APIManager.isInternetConnected == false {
+            let error = ResponseError()
+            error.errors = ["No internet connection."]
+            completionHandler(.failure(error))
+            return
+        }
+        
         AF.request(type.url,
                    method: type.httpMethod,
                    parameters: type.parameters,
@@ -40,6 +53,15 @@ class APIManager {
     }
     
     func call<T>(type: TargetType, completionHandler: @escaping (_ result: Result<T?, ResponseError>)-> ()) where T: Codable {
+        
+        //Check internet connection
+        if APIManager.isInternetConnected == false {
+            let error = ResponseError()
+            error.errors = ["No internet connection."]
+            completionHandler(.failure(error))
+            return
+        }
+        
         AF.request(type.url,
                    method: type.httpMethod,
                    parameters: type.parameters,
@@ -64,6 +86,7 @@ class APIManager {
                 }
             }
     }
+    
     static func createErrorAlert(error: ResponseError) -> UIAlertController {
         var err = ""
         for e in error.errors ?? [] {
